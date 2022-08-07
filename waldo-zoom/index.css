@@ -1,0 +1,79 @@
+:root {
+  --preview-area-width: 500px;
+  --preview-area-height: 400px;
+  --mag-width: 140px;
+  --mag-height: 140px;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-color: #3f3f3f;
+}
+
+.wallpaper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: contain;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/40645/Whare-s-Waldo-wheres-waldo-13776536-1024-768.jpg);
+  background-repeat: no-repeat;
+  width: var(--preview-area-width);
+  height: var(--preview-area-height);
+}
+
+.revealer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/40645/Whare-s-Waldo-wheres-waldo-13776536-1024-768.jpg);
+  background-repeat: no-repeat;
+  width: var(--preview-area-width);
+  height: var(--preview-area-height);
+}
+
+.mag {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  border: 3px solid #666;
+  border-radius: 50%;
+  pointer-events: none;
+  width: var(--mag-width);
+  height: var(--mag-height);
+}
+
+.mag:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: calc(var(--mag-width) - 5px);
+  height: calc(var(--mag-height) - 5px);
+  box-shadow: 0 0 12px #f5f5f5 inset;
+}
+
+.mag:after {
+  content: "";
+  position: absolute;
+  height: 90px;
+  width: 12px;
+  background: #000;
+  bottom: -90px;
+  left: calc(50% - 7px);
+  border-top: 10px solid #999;
+  border-bottom: 3px solid #999;
+}

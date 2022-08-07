@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Yellowtail:400);
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Yellowtail", sans-serif;
+  background-image: url(https://images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg);
+  overflow: hidden;
+  font-size: 120px;
+}
+
+.billboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #fff;
+  /* https://developer.mozilla.org/ja/docs/Web/CSS/text-shadow */
+  text-shadow: 0 0 17px #e291e2;
+  animation: tiktik 5s infinite;
+}
+
+/* https://developer.mozilla.org/ja/docs/Web/CSS/mix-blend-mode */
+@keyframes tiktik {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+  }
+}
